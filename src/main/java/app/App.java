@@ -15,9 +15,15 @@ public class App {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("ibatis-context.xml");
 		
 		EmployeeDao dao = ctx.getBean(EmployeeDao.class);
-		List<Employee> employees = dao.getAllEmployees();
-		for (Employee emp : employees) {
-			System.out.println(emp.getId() + "\t" + emp.getFirstName());
-		}
+		
+		Employee emp = new Employee();
+		emp.setFirstName("김");
+		emp.setLastName("유신");
+		emp.setEmail("kim@gmail.com");
+		emp.setPhoneNumber("010-2222-2222");
+		emp.setJobId("IT_PROG");
+		emp.setSalary(6000);
+		
+		dao.insertEmployee(emp);
 	}
 }

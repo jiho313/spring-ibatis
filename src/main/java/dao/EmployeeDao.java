@@ -16,7 +16,7 @@ public class EmployeeDao {
 	private SqlMapClientTemplate template;
 	
 	public void insertEmployee(Employee employee) {
-		
+		template.insert("insertEmployee", employee);
 	}
 	
 	public List<Employee> getAllEmployees() {
