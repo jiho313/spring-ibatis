@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap>
+
+	<insert id="insertEmployee">
+		insert into employees
+		(employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary)
+		values
+		(employees_seq.nextval, #firstName#, #lastName#, #email#, #phoneNumber#, sysdate, #jobId#, #salary#)
+	</insert>
+	<select id="getAllEmployees" resultClass="vo.Employee">
+		select employee_id as id,
+		       first_name as firstName
+		from employees
+		order by employee_id
+	</select>
+</sqlMap>
