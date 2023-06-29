@@ -12,8 +12,8 @@ public class Employee {
     private Date hireDate;
     private String jobId;
     private double salary;
-    private double commissionPct;
-    private int managerId;
+    private Double commissionPct;
+    private Integer managerId;
     private int departmentId;
 
 	public Employee() {}
@@ -82,19 +82,19 @@ public class Employee {
 		this.salary = salary;
 	}
 
-	public double getCommissionPct() {
+	public Double getCommissionPct() {
 		return commissionPct;
 	}
 
-	public void setCommissionPct(double commissionPct) {
+	public void setCommissionPct(Double commissionPct) {
 		this.commissionPct = commissionPct;
 	}
 
-	public int getManagerId() {
+	public Integer getManagerId() {
 		return managerId;
 	}
 
-	public void setManagerId(int managerId) {
+	public void setManagerId(Integer managerId) {
 		this.managerId = managerId;
 	}
 

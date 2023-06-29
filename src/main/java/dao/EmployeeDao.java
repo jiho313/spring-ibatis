@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
@@ -19,7 +20,27 @@ public class EmployeeDao {
 		template.insert("insertEmployee", employee);
 	}
 	
-	public List<Employee> getAllEmployees() {
-		return template.queryForList("getAllEmployees");
+	public int getAllEmployeesCount() {
+		return (Integer) template.queryForObject("getAllEmployeesCount");
+	}
+	
+	public int getEmployeesCountByDeptId(int deptId) {
+		return (Integer) template.queryForObject("getEmployeesCountByDeptId", deptId);
+	}
+	
+	public double getAnnualSalaryByEmpId(int empId) {
+		return (Double) template.queryForObject("getAnnualSalaryByEmpId", empId);
+	} 
+	
+	public List<String> getAllDepartmentNames() {
+		return (List<String>) template.queryForList("getAllDepartmentNames");
+	}
+	
+	public Employee getEmployeeById(int empId) {
+		return (Employee) template.queryForObject("getEmployeeById", empId);
+	} 
+	
+	public List<Employee> searchEmployees(Map<String, Object> param) {
+		return (List<Employee>) template.queryForList("searchEmployees", param);
 	}
 }
