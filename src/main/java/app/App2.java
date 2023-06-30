@@ -10,7 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import dao.EmployeeDao;
 import vo.Employee;
 
-public class app2 {
+public class App2 {
 	
 	public static void main(String[] args) {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("ibatis-context.xml");
